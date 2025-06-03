@@ -2,7 +2,7 @@ package Modelo;
 
 public class MatrizPesos {
 	
-	double[][] pesos;
+	private double[][] pesos;
 
 	public MatrizPesos(int entrada,int salida) {
 		pesos=new double[entrada][salida];

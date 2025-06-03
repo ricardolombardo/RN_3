@@ -2,8 +2,8 @@ package Modelo;
 
 public class Conexion {
 	
-	Neurona entrada,salida;
-	double peso;
+	private Neurona entrada,salida;
+	private double peso;
 	
 	public void propagar() {
 		entrada.propagar();

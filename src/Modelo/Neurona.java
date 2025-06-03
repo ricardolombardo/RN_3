@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Neurona {
 	
-	double e,p,salida;
-	ArrayList<Double> entradas=new ArrayList<>();
+	private double e,p,salida;
+	private ArrayList<Double> entradas=new ArrayList<>();
 	
 	public Neurona(){
 		e=Math.E;

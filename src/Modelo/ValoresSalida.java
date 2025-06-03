@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ValoresSalida {
 	
-	ArrayList<Double> valores;
+	private ArrayList<Double> valores;
 	
 	public ValoresSalida() {
 		valores=new ArrayList<Double>();

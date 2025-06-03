@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class RedNeuronal {
 	
-	double[][] dataSetEntrada;
-	double[][] dataSetSalida;
-	Capa entrada,oculta,salida;
-	Conexion[][] conexionesEntradaOculta,conexionesOcultaSalida;
-	ValoresSalida[] valores;
-	int exitos=0;
-	MatrizPesos m1,m2;
-	boolean salidaBinaria;
-	double[] promediosSalida;
+	private double[][] dataSetEntrada;
+	private double[][] dataSetSalida;
+	private Capa entrada,oculta,salida;
+	private Conexion[][] conexionesEntradaOculta,conexionesOcultaSalida;
+	private ValoresSalida[] valores;
+	private int exitos=0;
+	private MatrizPesos m1,m2;
+	private boolean salidaBinaria;
+	private double[] promediosSalida;
 
 	public RedNeuronal(int cantEntrada,int cantOculta,int cantSalida, boolean tipoSalida) {
 		entrada=new Capa(cantEntrada);
@@ -151,7 +151,7 @@ public class RedNeuronal {
 		for(Neurona n:salida.getNeuronas()) {
 			n.propagar();
 			//Guarda todos los valores obtenidos para luego poder compararlos
-			valores[nroNeurona].valores.add(n.getSalida());
+			valores[nroNeurona].getValores().add(n.getSalida());
 			nroNeurona++;
 		}
 		
@@ -173,7 +173,7 @@ public class RedNeuronal {
 			for(int i=0;i<valores.length;i++) {
 				promediosSalida[i]=valores[i].getPromedio();
 			}
-			System.out.println("Nuevos exitos "+correctos+" ID: "+m1.pesos[0][0]+"*"+m2.pesos[0][0]);
+			System.out.println("Nuevos exitos "+correctos+" ID: "+m1.getPesos()[0][0]+"*"+m2.getPesos()[0][0]);
 		}
 		return correctos;
 	}
@@ -183,13 +183,13 @@ public class RedNeuronal {
 		m2=new MatrizPesos(oculta.getNeuronas().size(),salida.getNeuronas().size());
 		for(int f=0;f<conexionesEntradaOculta.length;f++) {
 			for(int c=0;c<conexionesEntradaOculta[f].length;c++) {
-				m1.pesos[f][c]=conexionesEntradaOculta[f][c].getPeso();
+				m1.getPesos()[f][c]=conexionesEntradaOculta[f][c].getPeso();
 			}
 		}
 
 		for(int f=0;f<conexionesOcultaSalida.length;f++) {
 			for(int c=0;c<conexionesOcultaSalida[f].length;c++) {
-				m2.pesos[f][c]=conexionesOcultaSalida[f][c].getPeso();
+				m2.getPesos()[f][c]=conexionesOcultaSalida[f][c].getPeso();
 			}
 		}
 	}

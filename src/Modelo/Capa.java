@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Capa {
 	
-	ArrayList<Neurona> neuronas;
+	private ArrayList<Neurona> neuronas;
 	
 	public Capa(int cantidad) {
 		neuronas=new ArrayList<Neurona>();
